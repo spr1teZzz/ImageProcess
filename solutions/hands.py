@@ -98,18 +98,23 @@ class Hands(SolutionBase):
       static_image_mode: Whether to treat the input images as a batch of static
         and possibly unrelated images, or a video stream. See details in
         https://solutions.mediapipe.dev/hands#static_image_mode.
+        是否将输入图像视为一批静态且可能不相关的图像，还是视频流。
       max_num_hands: Maximum number of hands to detect. See details in
         https://solutions.mediapipe.dev/hands#max_num_hands.
+        要检测的最大手数。
       model_complexity: Complexity of the hand landmark model: 0 or 1.
         Landmark accuracy as well as inference latency generally go up with the
         model complexity. See details in
         https://solutions.mediapipe.dev/hands#model_complexity.
+        手部地标模型的复杂度:0或1。地标的准确性和推理延迟通常随着模型的复杂性而上升。
       min_detection_confidence: Minimum confidence value ([0.0, 1.0]) for hand
         detection to be considered successful. See details in
         https://solutions.mediapipe.dev/hands#min_detection_confidence.
+        手检测成功的最小置信值([0.0,1.0])。
       min_tracking_confidence: Minimum confidence value ([0.0, 1.0]) for the
         hand landmarks to be considered tracked successfully. See details in
         https://solutions.mediapipe.dev/hands#min_tracking_confidence.
+        最小置信值([0.0,1.0])被认为是成功跟踪的手部标记。
     """
     super().__init__(
         binary_graph_path=_BINARYPB_FILE_PATH,

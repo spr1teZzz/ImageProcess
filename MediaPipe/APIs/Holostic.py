@@ -87,6 +87,7 @@ with mp_holistic.Holistic(
         .get_default_pose_landmarks_style())
     #将图像水平翻转以显示自拍照视图。
     cv2.imshow('MediaPipe Holistic', cv2.flip(image, 1))
-    if cv2.waitKey(5) & 0xFF == 27:
+    key = cv2.waitKey(1)
+    if key ==ord('q'):
       break
 cap.release()
