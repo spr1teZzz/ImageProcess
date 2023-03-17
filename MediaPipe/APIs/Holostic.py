@@ -7,7 +7,7 @@ mp_holistic = mp.solutions.holistic
 
 # For static images:
 IMAGE_FILES = ['MediaPipe\\dlrb.jpg','MediaPipe\\jay.jpg','MediaPipe\\lxp.jpg']
-with mp_holistic.Holistic(
+'''with mp_holistic.Holistic(
     static_image_mode=True,
     model_complexity=2,
     enable_segmentation=True,
@@ -50,7 +50,7 @@ with mp_holistic.Holistic(
     cv2.imwrite('MediaPipe\\tmp\\annotated_image' + str(idx) + '.png', annotated_image)
     # Plot pose world landmarks.
     mp_drawing.plot_landmarks(
-        results.pose_world_landmarks, mp_holistic.POSE_CONNECTIONS)
+        results.pose_world_landmarks, mp_holistic.POSE_CONNECTIONS)'''
 
 # For webcam input:
 cap = cv2.VideoCapture(0)

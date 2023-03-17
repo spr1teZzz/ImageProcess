@@ -47,7 +47,7 @@ with mp_face_mesh.FaceMesh(
         image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
         results = face_mesh.process(image)
 
-        # 在图像上画上手部注释。
+        # 在图像上画注释。
         image.flags.writeable = True
         image = cv.cvtColor(image, cv.COLOR_RGB2BGR)
 

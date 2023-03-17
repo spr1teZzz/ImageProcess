@@ -1,6 +1,6 @@
 DATA_FILE = 'ConcentrationDegreeModel\Model_0301\\training_data\\data'
 NCLASSES  = 3
-MODEL = 'ConcentrationDegreeModel\Model_0301\\models\\model_pose.hdf5'
+MODEL = 'ConcentrationDegreeModel\Model_0301\\models\\model_iris.hdf5'
 ################################################################################
 #
 #                                LOADING DATA

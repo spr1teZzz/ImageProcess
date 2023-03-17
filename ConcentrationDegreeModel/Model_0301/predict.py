@@ -6,9 +6,9 @@ import numpy as np
 from pynput.keyboard import Key, Controller
 mp_face_mesh = mp.solutions.face_mesh
 keyboard = Controller()
-MODEL = 'ConcentrationDegreeModel\\Model_0301\\models\\model_pose.hdf5'
+MODEL = 'ConcentrationDegreeModel\\Model_0301\\models\\model_iris.hdf5'
 timeWindowSize = 30
-THRESHOLD =0.5
+THRESHOLD =0.7
 MAXPREDICTIONSWINDOW = 10
 # 左眼指数
 LEFT_EYE =[ 362, 382, 381, 380, 374, 373, 390, 249, 263, 466, 388, 387, 386, 385,384, 398 ]
@@ -47,6 +47,7 @@ def main():
                 continue
             image.flags.writeable = False
             image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+            image =  cv2.flip(image, 1)
             results = face_mesh.process(image)
             image.flags.writeable = True
             image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
@@ -84,7 +85,6 @@ def main():
                             if gestureActive:
                                 print(f'[INFO] identifyed {level[prediction[0]]}')
             # Flip the image horizontally for a selfie-view display.
-            image =  cv2.flip(image, 1)
             # Compute and write fps
             l = len(timeWindow)-1
             if l>0:
